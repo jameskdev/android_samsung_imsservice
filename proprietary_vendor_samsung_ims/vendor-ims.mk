@@ -53,7 +53,9 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/ims/proprietary/system/lib64/libcharon.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcharon.so \
     vendor/samsung/ims/proprietary/system/lib64/libcurl2.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcurl2.so \
     vendor/samsung/ims/proprietary/system/lib64/libsec-ims.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libsec-ims.so \
-    vendor/samsung/ims/proprietary/system/lib64/libstrongswan.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libstrongswan.so
+    vendor/samsung/ims/proprietary/system/lib64/libstrongswan.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libstrongswan.so \
+    vendor/samsung/ims/proprietary/system/lib64/vendor.samsung.hardware.radio.bridge@2.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.samsung.hardware.radio.bridge@2.0.so \
+    vendor/samsung/ims/proprietary/system/lib64/vendor.samsung.hardware.radio.bridge@2.1.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
 
 PRODUCT_PACKAGES += \
     imsservice
