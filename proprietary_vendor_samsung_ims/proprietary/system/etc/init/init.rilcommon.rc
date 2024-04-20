@@ -1,0 +1,155 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+# service can not be overwritten except SPRINT
+# Thus, rilcarrier is imported before common rc, like init.rilchip.rc
+import /init.rilmptcp.rc
+
+import /init.rilmcpsd.rc
+
+# AT Distributor for factory test
+service at_distributor /system/bin/at_distributor
+    class late_start
+    user root
+    group radio misc log system
+
+service DR-daemon /system/bin/ddexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service BCS-daemon /system/bin/connfwexe
+    class main
+    user root
+    group system shell radio inet net_raw
+
+# for ethernet
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+# for SmartSwitch
+service dhcpcd_usb0 /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+# for Wi-Fi only models
+on property:ro.radio.noril=yes
+    stop ril-daemon
+
+# for recovering at restarting netd
+service recover_radio /vendor/bin/sh /system/etc/restart_radio_process.sh
+    class main
+    user root
+    group radio
+    disabled
+    oneshot
+
+on post-fs-data
+    # For Samsung members
+    mkdir /data/log/err 0775 radio log
+    chown radio log /data/log/err
+    mkdir /data/vendor/log/err 0775 radio log
+    chown radio log /data/vendor/log/err	
+    # For KOR Model SKU
+    chown radio system /efs/imei/replace_code.dat
+    chmod 0664 /efs/imei/replace_code.dat
+
+on property:init.svc.netd=restarting
+    start recover_radio
+
+on post-fs-data
+    mkdir /efs/imei 0775 root radio
+    restorecon -R /efs/imei
+
+on post-fs-data
+    chown system radio efs/FactoryApp/eID
+    chmod 0640 efs/FactoryApp/eID
+    
+on load_persist_props_action
+    setprop ro.telephony.default_network ${ro.vendor.radio.default_network}
+
+on property:ro.telephony.default_network=*
+    setprop ro.ril.def_network_after_check_tdscdma ${ro.telephony.default_network}
+
+on property:ro.ril.def_network_after_check_tdscdma=*
+    setprop ro.telephony.default_network ${ro.ril.def_network_after_check_tdscdma}
+
+on property:ro.boot.sales.param.offset=*
+    setprop ro.vendor.boot.sales.param.offset ${ro.boot.sales.param.offset}
+
+on property:ro.boot.carrierid.param.offset=*
+    setprop ro.vendor.boot.carrierid.param.offset ${ro.boot.carrierid.param.offset}
+
+on property:ro.boot.im.param.offset=*
+    setprop ro.vendor.boot.im.param.offset ${ro.boot.im.param.offset}
+
+on property:ro.boot.me.param.offset=*
+    setprop ro.vendor.boot.me.param.offset ${ro.boot.me.param.offset}
+
+on property:ro.boot.omcnw.param.offset=*    
+    setprop ro.vendor.boot.omcnw.param.offset ${ro.boot.omcnw.param.offset}
+    
+on property:ro.boot.debug_level=*
+    setprop ro.vendor.boot.debug_level ${ro.boot.debug_level}
+
+on property:ro.boot.cp_debug_level=*
+    setprop ro.vendor.boot.cp_debug_level ${ro.boot.cp_debug_level}
+
+on property:ro.boot.sn.param.offset=*
+    setprop ro.vendor.boot.sn.param.offset ${ro.boot.sn.param.offset}
+
+on property:ro.build.characteristics=*
+    setprop ro.vendor.build.characteristics ${ro.build.characteristics}
+
+on property:ro.product_ship=*    
+    setprop ro.vendor.product_ship ${ro.product_ship}
+
+on property:ro.boot.warranty_bit=*    
+    setprop ro.vendor.boot.warranty_bit ${ro.boot.warranty_bit}
+
+on property:ro.boot.force_upload=*
+    setprop ro.vendor.boot.force_upload ${ro.boot.force_upload}
+
+on property:ro.ril.cdma.home.operator.alpha=*    
+    setprop ro.cdma.home.operator.alpha ${ro.ril.cdma.home.operator.alpha}
+
+on property:ro.ril.cdma.home.operator.numeric=*    
+    setprop ro.cdma.home.operator.numeric ${ro.ril.cdma.home.operator.numeric}
+
+on property:ro.ril.home.operator.carrierid=*    
+    setprop ro.home.operator.carrierid ${ro.ril.home.operator.carrierid}
+
+on property:ro.ril.home.operator.rrenabled=*    
+    setprop ro.home.operator.rrenabled ${ro.ril.home.operator.rrenabled}
+
+on property:ril.product_code=*    
+    setprop vendor.ril.product_code ${ril.product_code}
+
+on property:gsm.current.vsid=*
+    setprop vendor.gsm.current.vsid ${gsm.current.vsid}
+
+on property:gsm.current.vsid2=*
+    setprop vendor.gsm.current.vsid2 ${gsm.current.vsid2}
+
+on property:ro.factory.factory_binary=*    
+    setprop ro.vendor.factory_binary ${ro.factory.factory_binary}
+
+on property:ril.sim_mode=*
+    write /sys/module/usim_detect/parameters/testmode ${ril.sim_mode}
+
+# From S os, gsm.operator.numeric is labeled to radio_prop
+# and some vendor domain processes can't read this.
+# So, set one vendor_default_prop to remove this limitation.
+on property:gsm.operator.numeric=*   
+    setprop vendor.gsm.operator.numeric ${gsm.operator.numeric}
+
+on early-boot
+    copy /system/etc/mvno_list.xml /data/vendor/secradio/mvno_list.xml
+    copy ${persist.sys.omc_etcpath}/mvno_list.xml /data/vendor/secradio/mvno_list.xml
+    chown radio radio /data/vendor/secradio/mvno_list.xml

@@ -1,0 +1,6 @@
+service imsd /system/bin/imsd
+    class main
+    socket imsd stream 0660 system system
+    user system
+    group system radio net_raw inet net_admin
+    capabilities NET_RAW NET_ADMIN

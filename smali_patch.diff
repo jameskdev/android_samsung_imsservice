@@ -1,0 +1,3080 @@
+diff -urN ./smali/com/samsung/android/cmcnsd/network/NsdNetwork.smali ./smali2/com/samsung/android/cmcnsd/network/NsdNetwork.smali
+--- ./smali/com/samsung/android/cmcnsd/network/NsdNetwork.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/samsung/android/cmcnsd/network/NsdNetwork.smali	2024-04-18 06:31:07.298357625 +0900
+@@ -68,7 +68,7 @@
+ 
+     const-string/jumbo v1, "user"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/samsung/android/cmcp2phelper/BuildConstants.smali ./smali2/com/samsung/android/cmcp2phelper/BuildConstants.smali
+--- ./smali/com/samsung/android/cmcp2phelper/BuildConstants.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/samsung/android/cmcp2phelper/BuildConstants.smali	2024-04-18 06:31:07.294357620 +0900
+@@ -18,7 +18,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -36,7 +36,7 @@
+ 
+     const-string/jumbo v1, "user"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/samsung/android/cmcsetting/CmcSettingManager.smali ./smali2/com/samsung/android/cmcsetting/CmcSettingManager.smali
+--- ./smali/com/samsung/android/cmcsetting/CmcSettingManager.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/samsung/android/cmcsetting/CmcSettingManager.smali	2024-04-18 06:31:07.290357617 +0900
+@@ -328,7 +328,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -6085,7 +6085,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -6147,7 +6147,7 @@
+     .line 1158
+     const-string/jumbo v1, "ro.build.characteristics"
+ 
+-    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -6401,7 +6401,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/constants/Mno.smali ./smali2/com/sec/internal/constants/Mno.smali
+--- ./smali/com/sec/internal/constants/Mno.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/sec/internal/constants/Mno.smali	2024-04-18 06:31:05.942355938 +0900
+@@ -6285,7 +6285,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -6300,7 +6300,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -6311,7 +6311,7 @@
+     .locals 6
+ 
+     .line 933
+-    invoke-static {}, Landroid/os/SemSystemProperties;->getCountryIso()Ljava/lang/String;
++    invoke-static {}, Landroid/os/SystemProperties;->getCountryIso()Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/constants/ims/ImsConstants$SystemSettings.smali ./smali2/com/sec/internal/constants/ims/ImsConstants$SystemSettings.smali
+--- ./smali/com/sec/internal/constants/ims/ImsConstants$SystemSettings.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/sec/internal/constants/ims/ImsConstants$SystemSettings.smali	2024-02-28 23:31:19.365738000 +0900
+@@ -83,8 +83,6 @@
+ 
+ .field public static final PREFFERED_VOICE_CALL:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+ 
+-.field public static final RCS_ALLOWED_URI:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+-
+ .field public static final RCS_DISABLED:I = 0x0
+ 
+ .field public static final RCS_DISABLED_BY_NETWORK:I = -0x2
+@@ -626,19 +624,6 @@
+ 
+     sput-object v0, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->WIFI_CALL_WHEN_ROAMING2:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+ 
+-    .line 210
+-    new-instance v0, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+-
+-    const-string v1, "com.sec.knox.provider2"
+-
+-    const-string v3, "PhoneRestrictionPolicy"
+-
+-    const-string v5, "isRCSEnabled"
+-
+-    invoke-direct {v0, v1, v3, v5}, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+-
+-    sput-object v0, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->RCS_ALLOWED_URI:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+-
+     .line 216
+     new-instance v0, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+ 
+diff -urN ./smali/com/sec/internal/google/DataTypeConvertor.smali ./smali2/com/sec/internal/google/DataTypeConvertor.smali
+--- ./smali/com/sec/internal/google/DataTypeConvertor.smali	2024-04-08 23:01:37.000000000 +0900
++++ ./smali2/com/sec/internal/google/DataTypeConvertor.smali	2024-04-18 06:31:06.038356058 +0900
+@@ -855,7 +855,7 @@
+ 
+     const-string v10, ""
+ 
+-    invoke-static {v8, v10}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v8, v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v8
+ 
+@@ -870,7 +870,7 @@
+     .line 388
+     const-string/jumbo v10, "ro.csc.sales_code"
+ 
+-    invoke-static {v10}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v8
+ 
+diff -urN ./smali/com/sec/internal/google/ImsNotifier.smali ./smali2/com/sec/internal/google/ImsNotifier.smali
+--- ./smali/com/sec/internal/google/ImsNotifier.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/google/ImsNotifier.smali	2024-04-18 06:31:06.038356058 +0900
+@@ -855,7 +855,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/google/cmc/CmcConnectivityController.smali ./smali2/com/sec/internal/google/cmc/CmcConnectivityController.smali
+--- ./smali/com/sec/internal/google/cmc/CmcConnectivityController.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/google/cmc/CmcConnectivityController.smali	2024-04-18 06:31:06.034356053 +0900
+@@ -2998,7 +2998,7 @@
+ 
+     const-string/jumbo v1, "true"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -3014,7 +3014,7 @@
+     .line 218
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 220
+     const/16 v0, 0x3e9
+diff -urN ./smali/com/sec/internal/helper/OmcCode.smali ./smali2/com/sec/internal/helper/OmcCode.smali
+--- ./smali/com/sec/internal/helper/OmcCode.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/OmcCode.smali	2024-04-18 06:31:06.242356312 +0900
+@@ -33,7 +33,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -48,7 +48,7 @@
+     .line 36
+     const-string/jumbo v2, "ro.csc.sales_code"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -67,7 +67,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.omc_etcpath"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -116,7 +116,7 @@
+ 
+     const-string/jumbo v3, "persist.radio.multisim.config"
+ 
+-    invoke-static {v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -143,7 +143,7 @@
+     :cond_0
+     const-string/jumbo v3, "ro.csc.omcnw_code2"
+ 
+-    invoke-static {v3, v5}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -158,7 +158,7 @@
+     move-result-object v5
+ 
+     :cond_2
+-    invoke-static {v4, v5}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -173,7 +173,7 @@
+     move-result-object v5
+ 
+     :cond_4
+-    invoke-static {v4, v5}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -192,7 +192,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.omcnw_path"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -215,7 +215,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.omcnw_path2"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -229,7 +229,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.omcnw_path"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -311,7 +311,7 @@
+ 
+     const-string v1, "/system/csc"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -710,7 +710,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/helper/SimUtil.smali ./smali2/com/sec/internal/helper/SimUtil.smali
+--- ./smali/com/sec/internal/helper/SimUtil.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/SimUtil.smali	2024-04-18 06:31:06.046356068 +0900
+@@ -81,7 +81,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -540,7 +540,7 @@
+     .line 131
+     const-string/jumbo v0, "persist.radio.multisim.config"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -585,7 +585,7 @@
+ 
+     const/4 v1, -0x1
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -623,7 +623,7 @@
+     :cond_1
+     const-string/jumbo v1, "ro.product.first_api_level"
+ 
+-    invoke-static {v1, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v1, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v1
+ 
+diff -urN ./smali/com/sec/internal/helper/os/Debug.smali ./smali2/com/sec/internal/helper/os/Debug.smali
+--- ./smali/com/sec/internal/helper/os/Debug.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/os/Debug.smali	2024-04-18 06:41:06.006876769 +0900
+@@ -58,7 +58,7 @@
+ 
+     const-string v2, "0x4f4c"
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -116,19 +116,12 @@
+ .method public static isProductShip()Z
+     .locals 2
+ 
+-    .line 32
+-    invoke-static {}, Landroid/os/Debug;->semIsProductDev()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_1
+-
+     .line 33
+-    const-string/jumbo v0, "ro.product_ship"
++    const-string/jumbo v0, "ro.secims.enable_debug"
+ 
+     const-string/jumbo v1, "true"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -141,13 +134,12 @@
+     goto :goto_0
+ 
+     :cond_0
+-    const/4 v0, 0x0
++    const/4 v0, 0x1
+ 
+     goto :goto_1
+ 
+-    :cond_1
+     :goto_0
+-    const/4 v0, 0x1
++    const/4 v0, 0x0
+ 
+     .line 32
+     :goto_1
+@@ -162,7 +154,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/helper/os/DeviceUtil.smali ./smali2/com/sec/internal/helper/os/DeviceUtil.smali
+--- ./smali/com/sec/internal/helper/os/DeviceUtil.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/os/DeviceUtil.smali	2024-04-18 06:31:06.242356312 +0900
+@@ -113,7 +113,7 @@
+ 
+     const-string v1, "0"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -136,7 +136,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -342,7 +342,7 @@
+ 
+     const-string v10, ""
+ 
+-    invoke-static {v9, v10}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v9, v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v9
+ 
+@@ -694,7 +694,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -750,7 +750,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -773,7 +773,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -857,7 +857,7 @@
+ 
+     const-string v1, "Unknown"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -874,7 +874,7 @@
+ 
+     const-string v1, "no"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -995,7 +995,7 @@
+     move-object v2, v1
+ 
+     :goto_0
+-    invoke-static {v0, v2}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v0, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 96
+     sget-object v0, Lcom/sec/internal/constants/Mno;->MOCK_MNONAME_PROPERTY:Ljava/lang/String;
+@@ -1005,7 +1005,7 @@
+     sget-object v1, Lcom/sec/internal/constants/Mno;->GCF_OPERATOR_NAME:Ljava/lang/String;
+ 
+     :cond_1
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 99
+     const-string v0, "1"
+@@ -1024,7 +1024,7 @@
+     :goto_1
+     const-string/jumbo v3, "persist.ims.gcfmode"
+ 
+-    invoke-static {v3, v2}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v3, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 100
+     if-eqz p0, :cond_3
+@@ -1037,7 +1037,7 @@
+     :goto_2
+     const-string/jumbo v1, "persist.radio.gcfmode"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 101
+     return-void
+diff -urN ./smali/com/sec/internal/helper/os/ServiceStateWrapper.smali ./smali2/com/sec/internal/helper/os/ServiceStateWrapper.smali
+--- ./smali/com/sec/internal/helper/os/ServiceStateWrapper.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/os/ServiceStateWrapper.smali	2024-02-28 23:31:19.513740000 +0900
+@@ -305,189 +305,24 @@
+ .end method
+ 
+ .method public getLteImsVoiceAvail()I
+-    .locals 4
+-
+-    .line 120
+-    :try_start_0
+-    const-class v0, Landroid/telephony/ServiceState;
+-
+-    const-string v1, "getLteImsVoiceAvail"
+-
+-    const/4 v2, 0x0
+-
+-    new-array v3, v2, [Ljava/lang/Class;
+-
+-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v0
+-
+-    .line 121
+-    .local v0, "method":Ljava/lang/reflect/Method;
+-    iget-object v1, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v2, v2, [Ljava/lang/Object;
+-
+-    invoke-static {v0, v1, v2}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v1
+-
+-    check-cast v1, Ljava/lang/Integer;
+-
+-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v1
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v1
+-
+-    .line 122
+-    .end local v0    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v0
+-
+-    .line 123
+-    .local v0, "e":Ljava/lang/NoSuchMethodException;
+-    invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
++    .locals 1
+ 
+-    .line 126
+-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
+     const/4 v0, 0x1
+ 
+     return v0
+ .end method
+ 
+ .method public getLteIsEbSupported()I
+-    .locals 4
+-
+-    .line 131
+-    :try_start_0
+-    const-class v0, Landroid/telephony/ServiceState;
+-
+-    const-string v1, "getLteIsEbSupported"
+-
+-    const/4 v2, 0x0
+-
+-    new-array v3, v2, [Ljava/lang/Class;
+-
+-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v0
+-
+-    .line 132
+-    .local v0, "method":Ljava/lang/reflect/Method;
+-    iget-object v1, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v2, v2, [Ljava/lang/Object;
+-
+-    invoke-static {v0, v1, v2}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v1
+-
+-    check-cast v1, Ljava/lang/Integer;
+-
+-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v1
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v1
+-
+-    .line 133
+-    .end local v0    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v0
+-
+-    .line 134
+-    .local v0, "e":Ljava/lang/NoSuchMethodException;
+-    sget-object v1, Lcom/sec/internal/helper/os/ServiceStateWrapper;->TAG:Ljava/lang/String;
+-
+-    new-instance v2, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+-
+-    move-result-object v3
+-
+-    invoke-virtual {v3}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+-
+-    move-result-object v3
+-
+-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    const-string v3, "!! "
+-
+-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->getMessage()Ljava/lang/String;
+-
+-    move-result-object v3
+-
+-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v2
+-
+-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
++    .locals 1
+ 
+-    .line 137
+-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
+     const/4 v0, 0x1
+ 
+     return v0
+ .end method
+ 
+ .method public getMobileDataRegState()I
+-    .locals 4
+-
+-    .line 175
+-    :try_start_0
+-    const-class v0, Landroid/telephony/ServiceState;
+-
+-    const-string v1, "getMobileDataRegState"
+-
+-    const/4 v2, 0x0
+-
+-    new-array v3, v2, [Ljava/lang/Class;
+-
+-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v0
+-
+-    .line 176
+-    .local v0, "method":Ljava/lang/reflect/Method;
+-    iget-object v1, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v2, v2, [Ljava/lang/Object;
+-
+-    invoke-static {v0, v1, v2}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v1
+-
+-    check-cast v1, Ljava/lang/Integer;
+-
+-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v1
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v1
+-
+-    .line 177
+-    .end local v0    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v0
+-
+-    .line 178
+-    .local v0, "e":Ljava/lang/NoSuchMethodException;
+-    invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
++    .locals 1
+ 
+-    .line 181
+-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
+     const/4 v0, 0x1
+ 
+     return v0
+@@ -587,50 +422,8 @@
+     .locals 4
+ 
+     .line 197
+-    const/4 v0, 0x0
+-
+-    :try_start_0
+-    const-class v1, Landroid/telephony/ServiceState;
+-
+-    const-string v2, "getRilMobileDataRadioTechnology"
+-
+-    new-array v3, v0, [Ljava/lang/Class;
+-
+-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v1
+-
+-    .line 198
+-    .local v1, "method":Ljava/lang/reflect/Method;
+-    iget-object v2, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v3, v0, [Ljava/lang/Object;
+-
+-    invoke-static {v1, v2, v3}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v2
+-
+-    check-cast v2, Ljava/lang/Integer;
++    const/16 v0, 0xe
+ 
+-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v0
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v0
+-
+-    .line 199
+-    .end local v1    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v1
+-
+-    .line 200
+-    .local v1, "e":Ljava/lang/NoSuchMethodException;
+-    invoke-virtual {v1}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
+-
+-    .line 203
+-    .end local v1    # "e":Ljava/lang/NoSuchMethodException;
+     return v0
+ .end method
+ 
+@@ -699,53 +492,11 @@
+ .end method
+ 
+ .method public getSnapshotStatus()I
+-    .locals 4
++    .locals 1
+ 
+     .line 220
+     const/4 v0, 0x0
+ 
+-    :try_start_0
+-    const-class v1, Landroid/telephony/ServiceState;
+-
+-    const-string v2, "getSnapshotStatus"
+-
+-    new-array v3, v0, [Ljava/lang/Class;
+-
+-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v1
+-
+-    .line 221
+-    .local v1, "method":Ljava/lang/reflect/Method;
+-    iget-object v2, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v3, v0, [Ljava/lang/Object;
+-
+-    invoke-static {v1, v2, v3}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v2
+-
+-    check-cast v2, Ljava/lang/Integer;
+-
+-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+-
+-    move-result v0
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v0
+-
+-    .line 222
+-    .end local v1    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v1
+-
+-    .line 223
+-    .local v1, "e":Ljava/lang/NoSuchMethodException;
+-    invoke-virtual {v1}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
+-
+-    .line 226
+-    .end local v1    # "e":Ljava/lang/NoSuchMethodException;
+     return v0
+ .end method
+ 
+@@ -969,53 +720,11 @@
+ .end method
+ 
+ .method public isPsOnlyReg()Z
+-    .locals 4
++    .locals 1
+ 
+     .line 242
+-    const/4 v0, 0x0
+-
+-    :try_start_0
+-    const-class v1, Landroid/telephony/ServiceState;
+-
+-    const-string v2, "isPsOnlyReg"
+-
+-    new-array v3, v0, [Ljava/lang/Class;
+-
+-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+-
+-    move-result-object v1
+-
+-    .line 243
+-    .local v1, "method":Ljava/lang/reflect/Method;
+-    iget-object v2, p0, Lcom/sec/internal/helper/os/ServiceStateWrapper;->mServiceState:Landroid/telephony/ServiceState;
+-
+-    new-array v3, v0, [Ljava/lang/Object;
+-
+-    invoke-static {v1, v2, v3}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke2(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    move-result-object v2
+-
+-    check-cast v2, Ljava/lang/Boolean;
+-
+-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+-
+-    move-result v0
+-    :try_end_0
+-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    return v0
+-
+-    .line 244
+-    .end local v1    # "method":Ljava/lang/reflect/Method;
+-    :catch_0
+-    move-exception v1
+-
+-    .line 245
+-    .local v1, "e":Ljava/lang/NoSuchMethodException;
+-    invoke-virtual {v1}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
++    const/4 v0, 0x1
+ 
+-    .line 248
+-    .end local v1    # "e":Ljava/lang/NoSuchMethodException;
+     return v0
+ .end method
+ 
+diff -urN ./smali/com/sec/internal/helper/os/TelephonyManagerWrapper.smali ./smali2/com/sec/internal/helper/os/TelephonyManagerWrapper.smali
+--- ./smali/com/sec/internal/helper/os/TelephonyManagerWrapper.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/helper/os/TelephonyManagerWrapper.smali	2024-04-18 06:31:06.242356312 +0900
+@@ -589,7 +589,7 @@
+ 
+     const-string v5, ""
+ 
+-    invoke-static {v0, v5}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -990,7 +990,7 @@
+     .line 254
+     const-string v2, "gsm.apn.sim.operator.numeric"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -1632,7 +1632,7 @@
+     :try_start_0
+     const-class v2, Landroid/telephony/TelephonyManager;
+ 
+-    const-string v3, "getGroupIdLevel2"
++    const-string v3, "getGroupIdLevel1"
+ 
+     const/4 v4, 0x1
+ 
+@@ -4743,21 +4743,15 @@
+     :goto_0
+     const-class v4, Landroid/telephony/TelephonyManager;
+ 
+-    const-string/jumbo v5, "setImsRegistrationStateForSlot"
++    const-string/jumbo v5, "setImsRegistrationState"
+ 
+-    const/4 v6, 0x2
++    const/4 v6, 0x1
+ 
+     new-array v7, v6, [Ljava/lang/Class;
+ 
+-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+-
+-    aput-object v8, v7, v2
+-
+     sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+ 
+-    const/4 v9, 0x1
+-
+-    aput-object v8, v7, v9
++    aput-object v8, v7, v2
+ 
+     invoke-virtual {v4, v5, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+ 
+@@ -4771,18 +4765,12 @@
+ 
+     new-array v6, v6, [Ljava/lang/Object;
+ 
+-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
++    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+ 
+     move-result-object v7
+ 
+     aput-object v7, v6, v2
+ 
+-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+-
+-    move-result-object v2
+-
+-    aput-object v2, v6, v9
+-
+     invoke-static {v4, v5, v6}, Lcom/sec/ims/extensions/ReflectionUtils;->invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)V
+ 
+     .line 1008
+diff -urN ./smali/com/sec/internal/ims/config/adapters/DialogAdapter.smali ./smali2/com/sec/internal/ims/config/adapters/DialogAdapter.smali
+--- ./smali/com/sec/internal/ims/config/adapters/DialogAdapter.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/config/adapters/DialogAdapter.smali	2024-04-18 06:31:07.122357407 +0900
+@@ -2280,7 +2280,7 @@
+     .line 327
+     const-string/jumbo v0, "ro.build.scafe.cream"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -2362,7 +2362,7 @@
+     .line 315
+     const-string/jumbo v0, "ro.build.scafe.version"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/ims/core/GeolocationController$IntentListener$1.smali ./smali2/com/sec/internal/ims/core/GeolocationController$IntentListener$1.smali
+--- ./smali/com/sec/internal/ims/core/GeolocationController$IntentListener$1.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/GeolocationController$IntentListener$1.smali	2024-04-18 06:31:07.122357407 +0900
+@@ -176,7 +176,7 @@
+ 
+     move-result-object v3
+ 
+-    sget-object v4, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v4, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v3, v4}, Landroid/location/LocationManager;->isLocationEnabledForUser(Landroid/os/UserHandle;)Z
+ 
+diff -urN ./smali/com/sec/internal/ims/core/GeolocationController.smali ./smali2/com/sec/internal/ims/core/GeolocationController.smali
+--- ./smali/com/sec/internal/ims/core/GeolocationController.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/GeolocationController.smali	2024-04-18 06:31:07.122357407 +0900
+@@ -447,7 +447,7 @@
+     .line 489
+     iget-object v0, p0, Lcom/sec/internal/ims/core/GeolocationController;->mLocationManager:Landroid/location/LocationManager;
+ 
+-    sget-object v1, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v1, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isLocationEnabledForUser(Landroid/os/UserHandle;)Z
+ 
+@@ -458,7 +458,7 @@
+     .line 492
+     iget-object v0, p0, Lcom/sec/internal/ims/core/GeolocationController;->mLocationManager:Landroid/location/LocationManager;
+ 
+-    sget-object v1, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v1, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     const/4 v2, 0x1
+ 
+@@ -467,7 +467,7 @@
+     .line 493
+     iget-object v0, p0, Lcom/sec/internal/ims/core/GeolocationController;->mLocationManager:Landroid/location/LocationManager;
+ 
+-    sget-object v1, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v1, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isLocationEnabledForUser(Landroid/os/UserHandle;)Z
+ 
+@@ -1380,14 +1380,14 @@
+ 
+     iget-boolean v1, p0, Lcom/sec/internal/ims/core/GeolocationController;->mIsLocationEnabledToRestore:Z
+ 
+-    sget-object v2, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v2, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v0, v1, v2}, Landroid/location/LocationManager;->setLocationEnabledForUser(ZLandroid/os/UserHandle;)V
+ 
+     .line 501
+     iget-object v0, p0, Lcom/sec/internal/ims/core/GeolocationController;->mLocationManager:Landroid/location/LocationManager;
+ 
+-    sget-object v1, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v1, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isLocationEnabledForUser(Landroid/os/UserHandle;)Z
+ 
+@@ -2276,7 +2276,7 @@
+     .line 506
+     iget-object v0, p0, Lcom/sec/internal/ims/core/GeolocationController;->mLocationManager:Landroid/location/LocationManager;
+ 
+-    sget-object v1, Landroid/os/UserHandle;->SEM_CURRENT:Landroid/os/UserHandle;
++    sget-object v1, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
+ 
+     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isLocationEnabledForUser(Landroid/os/UserHandle;)Z
+ 
+diff -urN ./smali/com/sec/internal/ims/core/ImsIconManager.smali ./smali2/com/sec/internal/ims/core/ImsIconManager.smali
+--- ./smali/com/sec/internal/ims/core/ImsIconManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/ImsIconManager.smali	2024-04-18 06:31:07.094357372 +0900
+@@ -662,7 +662,7 @@
+     :cond_4
+     const-string/jumbo v2, "ril.currentplmn"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -2567,7 +2567,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/core/PdnController.smali ./smali2/com/sec/internal/ims/core/PdnController.smali
+--- ./smali/com/sec/internal/ims/core/PdnController.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/PdnController.smali	2024-04-18 06:31:07.098357377 +0900
+@@ -1010,7 +1010,7 @@
+ 
+     const-string v4, ""
+ 
+-    invoke-static {v3, v4}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationGovernorImpl.smali ./smali2/com/sec/internal/ims/core/RegistrationGovernorImpl.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationGovernorImpl.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationGovernorImpl.smali	2024-04-18 06:31:07.106357387 +0900
+@@ -426,7 +426,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.ims_test_mode"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationGovernorKor.smali ./smali2/com/sec/internal/ims/core/RegistrationGovernorKor.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationGovernorKor.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationGovernorKor.smali	2024-04-18 06:31:07.078357352 +0900
+@@ -373,7 +373,7 @@
+ 
+     const-string v3, "false"
+ 
+-    invoke-static {v0, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -1086,7 +1086,7 @@
+     .line 1159
+     const-string/jumbo v0, "ril.domesticOtaStart"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -3832,7 +3832,7 @@
+ 
+     if-ne v1, v2, :cond_1
+ 
+-    invoke-static {v4, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3866,7 +3866,7 @@
+ 
+     if-ne v2, v5, :cond_2
+ 
+-    invoke-static {v4, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -6162,7 +6162,7 @@
+ 
+     if-ne v0, v2, :cond_1
+ 
+-    invoke-static {v4, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -6192,7 +6192,7 @@
+ 
+     if-ne v0, v2, :cond_2
+ 
+-    invoke-static {v4, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationGovernorVzw.smali ./smali2/com/sec/internal/ims/core/RegistrationGovernorVzw.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationGovernorVzw.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationGovernorVzw.smali	2024-04-18 06:31:07.066357337 +0900
+@@ -702,7 +702,7 @@
+     .local v0, "isSVLTEDevice":Z
+     const-string/jumbo v1, "ro.ril.svlte1x"
+ 
+-    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -2466,7 +2466,7 @@
+ 
+     const/4 v4, 0x0
+ 
+-    invoke-static {v3, v4}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v3
+ 
+@@ -2505,7 +2505,7 @@
+     .line 768
+     const-string/jumbo v3, "ro.product.first_api_level"
+ 
+-    invoke-static {v3, v4}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v3
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationManager.smali ./smali2/com/sec/internal/ims/core/RegistrationManager.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationManager.smali	2024-04-18 06:31:07.074357347 +0900
+@@ -1279,7 +1279,7 @@
+     .local v9, "sipUserAgent":Ljava/lang/String;
+     const-string/jumbo v0, "ro.build.PDA"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v12
+ 
+@@ -1666,7 +1666,7 @@
+     .line 1420
+     const-string/jumbo v3, "ril.sw_ver"
+ 
+-    invoke-static {v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -1774,7 +1774,7 @@
+     .line 1432
+     const-string/jumbo v3, "ro.product.base_model"
+ 
+-    invoke-static {v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -1824,7 +1824,7 @@
+     :goto_9
+     const-string/jumbo v5, "ril.PcModelName"
+ 
+-    invoke-static {v5, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v5, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationManagerBase.smali ./smali2/com/sec/internal/ims/core/RegistrationManagerBase.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationManagerBase.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationManagerBase.smali	2024-04-18 06:31:06.938357178 +0900
+@@ -961,7 +961,7 @@
+ 
+     const-string/jumbo v1, "ril.lte.voice.status"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -6593,7 +6593,7 @@
+ 
+     const-string/jumbo v3, "ro.ril.svlte1x"
+ 
+-    invoke-static {v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationManagerInternal.smali ./smali2/com/sec/internal/ims/core/RegistrationManagerInternal.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationManagerInternal.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationManagerInternal.smali	2024-04-18 06:31:07.102357382 +0900
+@@ -6537,7 +6537,7 @@
+ 
+     const-string/jumbo v4, "ril.ims.ltevoicesupport"
+ 
+-    invoke-static {v4}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v4
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationObserverManager.smali ./smali2/com/sec/internal/ims/core/RegistrationObserverManager.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationObserverManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationObserverManager.smali	2024-04-18 06:31:07.082357357 +0900
+@@ -1604,7 +1604,7 @@
+     .local v8, "lastVolteSwitch":Ljava/lang/String;
+     const-string/jumbo v10, "ro.product.first_api_level"
+ 
+-    invoke-static {v10, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v10, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v3
+ 
+diff -urN ./smali/com/sec/internal/ims/core/RegistrationUtils.smali ./smali2/com/sec/internal/ims/core/RegistrationUtils.smali
+--- ./smali/com/sec/internal/ims/core/RegistrationUtils.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/RegistrationUtils.smali	2024-04-18 06:31:07.086357362 +0900
+@@ -5298,7 +5298,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v0, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -8083,7 +8083,7 @@
+ 
+     move-result-object v1
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 544
+     return-void
+diff -urN ./smali/com/sec/internal/ims/core/cmc/CmcAccountManager.smali ./smali2/com/sec/internal/ims/core/cmc/CmcAccountManager.smali
+--- ./smali/com/sec/internal/ims/core/cmc/CmcAccountManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/cmc/CmcAccountManager.smali	2024-04-18 06:31:07.090357367 +0900
+@@ -1300,7 +1300,7 @@
+ 
+     const-string v3, ""
+ 
+-    invoke-static {v1, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3858,7 +3858,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -4154,7 +4154,7 @@
+ 
+     const-string v6, ""
+ 
+-    invoke-static {v4, v6}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v4
+ 
+diff -urN ./smali/com/sec/internal/ims/core/handler/secims/PaniGenerator$PaniGeneratorBase.smali ./smali2/com/sec/internal/ims/core/handler/secims/PaniGenerator$PaniGeneratorBase.smali
+--- ./smali/com/sec/internal/ims/core/handler/secims/PaniGenerator$PaniGeneratorBase.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/handler/secims/PaniGenerator$PaniGeneratorBase.smali	2024-04-18 06:31:06.954357198 +0900
+@@ -226,7 +226,7 @@
+ 
+     const-string v3, "false"
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+diff -urN ./smali/com/sec/internal/ims/core/handler/secims/UserAgent.smali ./smali2/com/sec/internal/ims/core/handler/secims/UserAgent.smali
+--- ./smali/com/sec/internal/ims/core/handler/secims/UserAgent.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/handler/secims/UserAgent.smali	2024-04-18 06:31:06.958357203 +0900
+@@ -4859,7 +4859,7 @@
+     .line 297
+     const-string/jumbo v0, "ril.subtype"
+ 
+-    invoke-static {v0, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -4960,7 +4960,7 @@
+     .line 309
+     const-string/jumbo v0, "ro.boot.hardware"
+ 
+-    invoke-static {v0, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/ims/core/sim/CscNetParser.smali ./smali2/com/sec/internal/ims/core/sim/CscNetParser.smali
+--- ./smali/com/sec/internal/ims/core/sim/CscNetParser.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/sim/CscNetParser.smali	2024-04-18 06:31:07.058357327 +0900
+@@ -134,7 +134,7 @@
+     .line 468
+     const-string/jumbo v0, "persist.sys.omc_path"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -185,7 +185,7 @@
+     .line 476
+     const-string/jumbo v5, "persist.sys.omcnw_path2"
+ 
+-    invoke-static {v5, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v5, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -193,7 +193,7 @@
+ 
+     .line 478
+     :cond_0
+-    invoke-static {v7, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v7, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -201,7 +201,7 @@
+ 
+     .line 481
+     :cond_1
+-    invoke-static {v7, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v7, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+diff -urN ./smali/com/sec/internal/ims/core/sim/SimManager.smali ./smali2/com/sec/internal/ims/core/sim/SimManager.smali
+--- ./smali/com/sec/internal/ims/core/sim/SimManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/sim/SimManager.smali	2024-04-18 06:31:07.062357332 +0900
+@@ -406,7 +406,7 @@
+ 
+     const-string/jumbo v2, "unknown"
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -1040,7 +1040,7 @@
+ 
+     const-string/jumbo v2, "unknown"
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -1133,7 +1133,7 @@
+ 
+     iget-object v3, p0, Lcom/sec/internal/ims/core/sim/SimManager;->mSimMnoName:Ljava/lang/String;
+ 
+-    invoke-static {v1, v3}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v1, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 1277
+     iget-object v1, p0, Lcom/sec/internal/ims/core/sim/SimManager;->mMnoInfo:Landroid/content/ContentValues;
+@@ -2299,7 +2299,7 @@
+ 
+     const-string/jumbo v6, "unknown"
+ 
+-    invoke-static {v3, v6}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -2906,7 +2906,7 @@
+ 
+     move-result-object v8
+ 
+-    invoke-static {v7, v8}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 1039
+     iget-object v7, v0, Lcom/sec/internal/ims/core/sim/SimManager;->mEventLog:Lcom/sec/internal/helper/SimpleEventLog;
+@@ -3462,7 +3462,7 @@
+ 
+     const-string/jumbo v1, "unknown"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -3560,7 +3560,7 @@
+ 
+     iget-object v2, p0, Lcom/sec/internal/ims/core/sim/SimManager;->mSimMnoName:Ljava/lang/String;
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 1180
+     iget-object v1, p0, Lcom/sec/internal/ims/core/sim/SimManager;->mMnoInfo:Landroid/content/ContentValues;
+@@ -3736,7 +3736,7 @@
+ 
+     const-string/jumbo v2, "unknown"
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3885,7 +3885,7 @@
+ 
+     move-result-object v2
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 1243
+     iget-object v1, p0, Lcom/sec/internal/ims/core/sim/SimManager;->mMnoInfo:Landroid/content/ContentValues;
+@@ -7999,7 +7999,7 @@
+ 
+     const-string v3, ""
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -8637,7 +8637,7 @@
+ 
+     const-string v3, ""
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+diff -urN ./smali/com/sec/internal/ims/core/sim/SimManagerUtils.smali ./smali2/com/sec/internal/ims/core/sim/SimManagerUtils.smali
+--- ./smali/com/sec/internal/ims/core/sim/SimManagerUtils.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/core/sim/SimManagerUtils.smali	2024-04-18 06:31:07.058357327 +0900
+@@ -559,7 +559,7 @@
+ 
+     .line 174
+     :cond_1
+-    invoke-static {v0, p1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -843,7 +843,7 @@
+     .line 46
+     const-string/jumbo v1, "ro.boot.hardware"
+ 
+-    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/diagnosis/ImsLogAgent.smali ./smali2/com/sec/internal/ims/diagnosis/ImsLogAgent.smali
+--- ./smali/com/sec/internal/ims/diagnosis/ImsLogAgent.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/diagnosis/ImsLogAgent.smali	2024-04-18 08:28:37.995113597 +0900
+@@ -478,7 +478,7 @@
+ 
+     const v1, 0x5265c00
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -2180,7 +2180,7 @@
+     :cond_b
+     const-string/jumbo v2, "persist.ril.config.defaultmsgapp"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -2962,57 +2962,14 @@
+ .end method
+ 
+ .method protected sendLogToHqmManager(Ljava/lang/String;Ljava/lang/String;)Z
+-    .locals 11
++    .locals 1
+     .param p1, "feature"    # Ljava/lang/String;
+     .param p2, "custom_dataset"    # Ljava/lang/String;
+ 
+     .line 333
+-    iget-object v0, p0, Lcom/sec/internal/ims/diagnosis/ImsLogAgent;->mContext:Landroid/content/Context;
+-
+-    const-string v1, "HqmManagerService"
+-
+-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    check-cast v0, Landroid/os/SemHqmManager;
+-
+-    .line 334
+-    .local v0, "hqm":Landroid/os/SemHqmManager;
+-    if-nez v0, :cond_0
+-
+-    .line 335
+-    const/4 v1, 0x0
+-
+-    return v1
+-
+-    .line 337
+-    :cond_0
+-    const/4 v2, 0x0
+-
+-    const-string v3, "Telephony"
+-
+-    const-string/jumbo v5, "sm"
+-
+-    const-string v6, "0.0"
+-
+-    const-string/jumbo v7, "sec"
+-
+-    const-string v8, ""
+-
+-    const-string v10, ""
+-
+-    move-object v1, v0
+-
+-    move-object v4, p1
+-
+-    move-object v9, p2
+-
+-    invoke-virtual/range {v1 .. v10}, Landroid/os/SemHqmManager;->sendHWParamToHQM(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+-
+-    move-result v1
++    const/4 v0, 0x1
+ 
+-    return v1
++    return v0
+ .end method
+ 
+ .method public update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+diff -urN ./smali/com/sec/internal/ims/diagnosis/RcsHqmAgent.smali ./smali2/com/sec/internal/ims/diagnosis/RcsHqmAgent.smali
+--- ./smali/com/sec/internal/ims/diagnosis/RcsHqmAgent.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/diagnosis/RcsHqmAgent.smali	2024-04-18 08:35:10.787223168 +0900
+@@ -68,7 +68,7 @@
+ 
+     const-string v1, "00101#"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -123,153 +123,15 @@
+ .end method
+ 
+ .method protected static sendHWParamToHQM(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+-    .locals 12
++    .locals 1
+     .param p0, "context"    # Landroid/content/Context;
+     .param p1, "feature"    # Ljava/lang/String;
+     .param p2, "custom_dataset"    # Ljava/lang/String;
+ 
+     .line 64
+-    sget-object v0, Lcom/sec/internal/ims/diagnosis/RcsHqmAgent;->LOG_TAG:Ljava/lang/String;
+-
+-    new-instance v1, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    const-string/jumbo v2, "sendHWParamToHQM: feature - "
+-
+-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    const-string v2, ", custom_dataset - "
+-
+-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v1
+-
+-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 66
+-    const/4 v0, 0x0
+-
+-    :try_start_0
+-    const-string v1, "HqmManagerService"
+-
+-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v1
+-
+-    move-object v2, v1
+-
+-    check-cast v2, Landroid/os/SemHqmManager;
+-
+-    .line 67
+-    .local v2, "hqm":Landroid/os/SemHqmManager;
+-    const/4 v3, 0x0
+-
+-    const-string v4, "Telephony"
+-
+-    const-string/jumbo v6, "sm"
+-
+-    const-string v7, "0.0"
+-
+-    const-string/jumbo v8, "sec"
+-
+-    const-string v9, ""
+-
+-    const-string v11, ""
+-
+-    move-object v5, p1
+-
+-    move-object v10, p2
+-
+-    invoke-virtual/range {v2 .. v11}, Landroid/os/SemHqmManager;->sendHWParamToHQM(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+-
+-    move-result v1
+-
+-    if-nez v1, :cond_0
+-
+-    .line 69
+-    sget-object v1, Lcom/sec/internal/ims/diagnosis/RcsHqmAgent;->LOG_TAG:Ljava/lang/String;
+-
+-    const-string/jumbo v3, "sendHWParamToHQM: return false."
+-
+-    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+-    :try_end_0
+-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    .line 70
+-    return v0
+-
+-    .line 78
+-    .end local v2    # "hqm":Landroid/os/SemHqmManager;
+-    :cond_0
+-    nop
+-
+-    .line 79
+     const/4 v0, 0x1
+ 
+     return v0
+-
+-    .line 75
+-    :catch_0
+-    move-exception v1
+-
+-    .line 76
+-    .local v1, "e":Ljava/lang/ClassCastException;
+-    sget-object v2, Lcom/sec/internal/ims/diagnosis/RcsHqmAgent;->LOG_TAG:Ljava/lang/String;
+-
+-    new-instance v3, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    const-string/jumbo v4, "sendHWParamToHQM: ClassCastException. "
+-
+-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v3
+-
+-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 77
+-    return v0
+-
+-    .line 72
+-    .end local v1    # "e":Ljava/lang/ClassCastException;
+-    :catch_1
+-    move-exception v1
+-
+-    .line 73
+-    .local v1, "e":Ljava/lang/NullPointerException;
+-    sget-object v2, Lcom/sec/internal/ims/diagnosis/RcsHqmAgent;->LOG_TAG:Ljava/lang/String;
+-
+-    new-instance v3, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    const-string/jumbo v4, "sendHWParamToHQM: NullPointerException. "
+-
+-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v3
+-
+-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 74
+-    return v0
+ .end method
+ 
+ .method public static sendRCSInfoToHQM(Landroid/content/Context;Ljava/lang/String;ILjava/util/Map;)Z
+diff -urN ./smali/com/sec/internal/ims/entitlement/nsds/NSDSSimEventManager.smali ./smali2/com/sec/internal/ims/entitlement/nsds/NSDSSimEventManager.smali
+--- ./smali/com/sec/internal/ims/entitlement/nsds/NSDSSimEventManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/entitlement/nsds/NSDSSimEventManager.smali	2024-04-18 06:31:06.898357128 +0900
+@@ -1546,7 +1546,7 @@
+     .line 394
+     const-string/jumbo v11, "ro.simbased.changetype"
+ 
+-    invoke-static {v11, v7}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v11, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v7
+ 
+@@ -1593,7 +1593,7 @@
+ 
+     const-string/jumbo v12, "ro.product.first_api_level"
+ 
+-    invoke-static {v12, v9}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v12, v9}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v9
+ 
+diff -urN ./smali/com/sec/internal/ims/entitlement/nsds/app/fcm/data/ericssonnsds/PushMessage.smali ./smali2/com/sec/internal/ims/entitlement/nsds/app/fcm/data/ericssonnsds/PushMessage.smali
+--- ./smali/com/sec/internal/ims/entitlement/nsds/app/fcm/data/ericssonnsds/PushMessage.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/entitlement/nsds/app/fcm/data/ericssonnsds/PushMessage.smali	2024-04-18 06:31:06.914357148 +0900
+@@ -97,7 +97,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/entitlement/nsds/ericssonnsds/NSDSModule.smali ./smali2/com/sec/internal/ims/entitlement/nsds/ericssonnsds/NSDSModule.smali
+--- ./smali/com/sec/internal/ims/entitlement/nsds/ericssonnsds/NSDSModule.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/entitlement/nsds/ericssonnsds/NSDSModule.smali	2024-04-18 06:31:06.906357138 +0900
+@@ -1919,7 +1919,7 @@
+     :cond_0
+     const-string/jumbo v13, "ro.product.first_api_level"
+ 
+-    invoke-static {v13, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v13, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v13
+ 
+diff -urN ./smali/com/sec/internal/ims/entitlement/nsds/strategy/DefaultNsdsMnoStrategy.smali ./smali2/com/sec/internal/ims/entitlement/nsds/strategy/DefaultNsdsMnoStrategy.smali
+--- ./smali/com/sec/internal/ims/entitlement/nsds/strategy/DefaultNsdsMnoStrategy.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/entitlement/nsds/strategy/DefaultNsdsMnoStrategy.smali	2024-04-18 06:31:06.902357133 +0900
+@@ -111,7 +111,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/imsservice/ImsServiceStub.smali ./smali2/com/sec/internal/ims/imsservice/ImsServiceStub.smali
+--- ./smali/com/sec/internal/ims/imsservice/ImsServiceStub.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/imsservice/ImsServiceStub.smali	2024-04-18 06:31:06.466356590 +0900
+@@ -2317,7 +2317,7 @@
+     .line 602
+     :cond_0
+     :try_start_0
+-    sget v0, Landroid/os/Build$VERSION;->SEM_INT:I
++    const/16 v0, 0xbb9
+ 
+     const/16 v1, 0xa9c
+ 
+diff -urN ./smali/com/sec/internal/ims/imsservice/ImsServiceStub$2.smali ./smali2/com/sec/internal/ims/imsservice/ImsServiceStub$2.smali
+--- ./smali/com/sec/internal/ims/imsservice/ImsServiceStub$2.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/imsservice/ImsServiceStub$2.smali	2024-04-18 06:31:06.466356590 +0900
+@@ -100,7 +100,7 @@
+ 
+     const-string/jumbo v2, "ro.product.first_api_level"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v1
+ 
+diff -urN ./smali/com/sec/internal/ims/rcs/RcsPolicyManager.smali ./smali2/com/sec/internal/ims/rcs/RcsPolicyManager.smali
+--- ./smali/com/sec/internal/ims/rcs/RcsPolicyManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/rcs/RcsPolicyManager.smali	2024-02-28 23:31:20.057747000 +0900
+@@ -78,15 +78,6 @@
+ 
+     invoke-static {v0, v1, v2}, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->addUri(Landroid/content/UriMatcher;Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;I)V
+ 
+-    .line 82
+-    sget-object v0, Lcom/sec/internal/ims/rcs/RcsPolicyManager;->sUriMatcher:Landroid/content/UriMatcher;
+-
+-    sget-object v1, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->RCS_ALLOWED_URI:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+-
+-    const/16 v2, 0x9
+-
+-    invoke-static {v0, v1, v2}, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->addUri(Landroid/content/UriMatcher;Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;I)V
+-
+     .line 84
+     sget-object v0, Lcom/sec/internal/ims/rcs/RcsPolicyManager;->sUriMatcher:Landroid/content/UriMatcher;
+ 
+@@ -3668,25 +3659,6 @@
+     .line 125
+     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+ 
+-    .line 127
+-    iget-object v0, p0, Lcom/sec/internal/ims/rcs/RcsPolicyManager;->context:Landroid/content/Context;
+-
+-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+-
+-    move-result-object v0
+-
+-    sget-object v1, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings;->RCS_ALLOWED_URI:Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;
+-
+-    .line 128
+-    invoke-virtual {v1}, Lcom/sec/internal/constants/ims/ImsConstants$SystemSettings$SettingsItem;->getUri()Landroid/net/Uri;
+-
+-    move-result-object v1
+-
+-    iget-object v3, p0, Lcom/sec/internal/ims/rcs/RcsPolicyManager;->mRcsContentObserver:Landroid/database/ContentObserver;
+-
+-    .line 127
+-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+-
+     .line 129
+     iget-object v0, p0, Lcom/sec/internal/ims/rcs/RcsPolicyManager;->context:Landroid/content/Context;
+ 
+diff -urN ./smali/com/sec/internal/ims/rcs/util/RcsUtils$UiUtils.smali ./smali2/com/sec/internal/ims/rcs/util/RcsUtils$UiUtils.smali
+--- ./smali/com/sec/internal/ims/rcs/util/RcsUtils$UiUtils.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/rcs/util/RcsUtils$UiUtils.smali	2024-04-18 06:31:06.934357173 +0900
+@@ -340,7 +340,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/ims/rcs/util/RcsUtils.smali ./smali2/com/sec/internal/ims/rcs/util/RcsUtils.smali
+--- ./smali/com/sec/internal/ims/rcs/util/RcsUtils.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/rcs/util/RcsUtils.smali	2024-04-18 06:31:06.934357173 +0900
+@@ -221,7 +221,7 @@
+     .line 432
+     const-string v0, "mdc.singlesku"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -235,7 +235,7 @@
+ 
+     const-string v0, "mdc.unified"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/ims/rcscore/RcsPreferencesProvider.smali ./smali2/com/sec/internal/ims/rcscore/RcsPreferencesProvider.smali
+--- ./smali/com/sec/internal/ims/rcscore/RcsPreferencesProvider.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/rcscore/RcsPreferencesProvider.smali	2024-04-18 06:31:06.934357173 +0900
+@@ -551,7 +551,7 @@
+ 
+     const-string v11, ""
+ 
+-    invoke-static {v4, v11}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v4, v11}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v4
+ 
+@@ -1166,7 +1166,7 @@
+     .local v1, "phoneId":I
+     const-string/jumbo v2, "persist.radio.multisim.config"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -1539,7 +1539,7 @@
+     .local v1, "phoneId":I
+     const-string/jumbo v2, "persist.radio.multisim.config"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/im/strategy/VzwStrategy.smali ./smali2/com/sec/internal/ims/servicemodules/im/strategy/VzwStrategy.smali
+--- ./smali/com/sec/internal/ims/servicemodules/im/strategy/VzwStrategy.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/im/strategy/VzwStrategy.smali	2024-04-18 06:31:06.778356979 +0900
+@@ -905,7 +905,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/im/strategy/VzwUPStrategy.smali ./smali2/com/sec/internal/ims/servicemodules/im/strategy/VzwUPStrategy.smali
+--- ./smali/com/sec/internal/ims/servicemodules/im/strategy/VzwUPStrategy.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/im/strategy/VzwUPStrategy.smali	2024-04-18 06:31:06.778356979 +0900
+@@ -1562,7 +1562,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/presence/PresenceModule.smali ./smali2/com/sec/internal/ims/servicemodules/presence/PresenceModule.smali
+--- ./smali/com/sec/internal/ims/servicemodules/presence/PresenceModule.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/presence/PresenceModule.smali	2024-04-18 06:31:06.530356670 +0900
+@@ -1284,7 +1284,7 @@
+ 
+     const-string/jumbo v1, "ro.ril.svlte1x"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/sms/SmsServiceModule.smali ./smali2/com/sec/internal/ims/servicemodules/sms/SmsServiceModule.smali
+--- ./smali/com/sec/internal/ims/servicemodules/sms/SmsServiceModule.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/sms/SmsServiceModule.smali	2024-04-18 06:31:06.562356710 +0900
+@@ -6256,7 +6256,7 @@
+ 
+     const-string/jumbo v0, "ro.product.first_api_level"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/sms/SmsUtil.smali ./smali2/com/sec/internal/ims/servicemodules/sms/SmsUtil.smali
+--- ./smali/com/sec/internal/ims/servicemodules/sms/SmsUtil.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/sms/SmsUtil.smali	2024-02-28 23:31:19.617741000 +0900
+@@ -1168,7 +1168,7 @@
+ .end method
+ 
+ .method protected static sendHWParamToHQM(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+-    .locals 12
++    .locals 1
+     .param p0, "context"    # Landroid/content/Context;
+     .param p1, "type"    # I
+     .param p2, "id"    # Ljava/lang/String;
+@@ -1179,59 +1179,11 @@
+     .param p7, "dev_custom_dataset"    # Ljava/lang/String;
+     .param p8, "custom_dataset"    # Ljava/lang/String;
+     .param p9, "pri_custom_dataset"    # Ljava/lang/String;
+-    .annotation system Ldalvik/annotation/Throws;
+-        value = {
+-            Landroid/os/RemoteException;
+-        }
+-    .end annotation
+ 
+     .line 380
+-    const-string v0, "HqmManagerService"
++    const/4 v0, 0x1
+ 
+-    move-object v1, p0
+-
+-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v0
+-
+-    check-cast v0, Landroid/os/SemHqmManager;
+-
+-    .line 381
+-    .local v0, "hqm":Landroid/os/SemHqmManager;
+-    if-nez v0, :cond_0
+-
+-    .line 382
+-    const/4 v2, 0x0
+-
+-    return v2
+-
+-    .line 384
+-    :cond_0
+-    move-object v2, v0
+-
+-    move v3, p1
+-
+-    move-object v4, p2
+-
+-    move-object v5, p3
+-
+-    move-object/from16 v6, p4
+-
+-    move-object/from16 v7, p5
+-
+-    move-object/from16 v8, p6
+-
+-    move-object/from16 v9, p7
+-
+-    move-object/from16 v10, p8
+-
+-    move-object/from16 v11, p9
+-
+-    invoke-virtual/range {v2 .. v11}, Landroid/os/SemHqmManager;->sendHWParamToHQM(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+-
+-    move-result v2
+-
+-    return v2
++    return v0
+ .end method
+ 
+ .method protected static sendISMOInfoToHQM(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;ZI)V
+@@ -1452,7 +1404,7 @@
+ 
+     const-string v1, "00101#"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -1476,7 +1428,7 @@
+ 
+     const/4 v3, 0x0
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v2
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/ss/UtServiceModule.smali ./smali2/com/sec/internal/ims/servicemodules/ss/UtServiceModule.smali
+--- ./smali/com/sec/internal/ims/servicemodules/ss/UtServiceModule.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/ss/UtServiceModule.smali	2024-04-18 06:31:06.518356655 +0900
+@@ -4401,7 +4401,7 @@
+ 
+     move-result-object v6
+ 
+-    invoke-static {v6}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v6
+ 
+@@ -4409,7 +4409,7 @@
+     .local v6, "iccType":Ljava/lang/String;
+     const-string/jumbo v7, "ril.IsCSIM"
+ 
+-    invoke-static {v7}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v7
+ 
+@@ -4789,7 +4789,7 @@
+     .line 237
+     const-string/jumbo v2, "ro.build.PDA"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -4849,7 +4849,7 @@
+ 
+     const-string/jumbo v5, "ro.product.base_model"
+ 
+-    invoke-static {v5}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v5
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/volte2/ImsIncomingCall.smali ./smali2/com/sec/internal/ims/servicemodules/volte2/ImsIncomingCall.smali
+--- ./smali/com/sec/internal/ims/servicemodules/volte2/ImsIncomingCall.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/volte2/ImsIncomingCall.smali	2024-04-18 06:31:06.710356895 +0900
+@@ -671,7 +671,7 @@
+ 
+     const/4 v3, 0x0
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v2
+ 
+@@ -679,7 +679,7 @@
+     .local v2, "spCameraRun":I
+     const-string/jumbo v4, "service.camera.rec.running"
+ 
+-    invoke-static {v4, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v4, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v4
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/volte2/KeepAliveSender.smali ./smali2/com/sec/internal/ims/servicemodules/volte2/KeepAliveSender.smali
+--- ./smali/com/sec/internal/ims/servicemodules/volte2/KeepAliveSender.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/volte2/KeepAliveSender.smali	2024-04-18 06:31:06.698356880 +0900
+@@ -447,7 +447,7 @@
+ 
+     const-string/jumbo v1, "persist.sys.ims.blockvzwka"
+ 
+-    invoke-static {v1, v0}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler.smali ./smali2/com/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler.smali
+--- ./smali/com/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler.smali	2024-03-25 16:18:51.726684000 +0900
+@@ -544,168 +544,11 @@
+ 
+ # virtual methods
+ .method public declared-synchronized getNetworkStatsVideoCall()J
+-    .locals 9
++    .locals 2
++    
++    const-wide/16 v0, 0x0
+ 
+-    monitor-enter p0
+-
+-    .line 148
+-    :try_start_0
+-    const-string v0, "network_management"
+-
+-    .line 149
+-    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+-
+-    move-result-object v0
+-
+-    .line 148
+-    invoke-static {v0}, Landroid/os/INetworkManagementService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/INetworkManagementService;
+-
+-    move-result-object v0
+-    :try_end_0
+-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+-
+-    .line 150
+-    .local v0, "sNwMgrService":Landroid/os/INetworkManagementService;
+-    const-wide/16 v1, 0x0
+-
+-    .line 152
+-    .local v1, "dataUsage":J
+-    if-eqz v0, :cond_1
+-
+-    .line 153
+-    :try_start_1
+-    iget-object v3, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mIface:Ljava/lang/String;
+-
+-    iget v4, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mLocalVideoRtp:I
+-
+-    iget v5, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mRemoteVideoRtp:I
+-
+-    invoke-interface {v0, v3, v4, v5}, Landroid/os/INetworkManagementService;->getNetworkStatsVideoCall(Ljava/lang/String;II)Landroid/net/NetworkStats;
+-
+-    move-result-object v3
+-
+-    .line 154
+-    .local v3, "networkStatsRtp":Landroid/net/NetworkStats;
+-    iget-object v4, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mIface:Ljava/lang/String;
+-
+-    iget v5, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mLocalVideoRtcp:I
+-
+-    iget v6, p0, Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;->mRemoteVideoRtcp:I
+-
+-    invoke-interface {v0, v4, v5, v6}, Landroid/os/INetworkManagementService;->getNetworkStatsVideoCall(Ljava/lang/String;II)Landroid/net/NetworkStats;
+-
+-    move-result-object v4
+-
+-    .line 155
+-    .local v4, "networkStatsRtcp":Landroid/net/NetworkStats;
+-    if-eqz v3, :cond_0
+-
+-    .line 156
+-    const-string v5, "NetworkStatsOnPortHandler"
+-
+-    new-instance v6, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    const-string v7, "getNetworkStatsVideoCall networkStatsRtp : "
+-
+-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v3}, Landroid/net/NetworkStats;->getTotalBytes()J
+-
+-    move-result-wide v7
+-
+-    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v6
+-
+-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 157
+-    invoke-virtual {v3}, Landroid/net/NetworkStats;->getTotalBytes()J
+-
+-    move-result-wide v5
+-
+-    add-long/2addr v1, v5
+-
+-    .line 160
+-    .end local p0    # "this":Lcom/sec/internal/ims/servicemodules/volte2/NetworkStatsOnPortHandler;
+-    :cond_0
+-    if-eqz v4, :cond_1
+-
+-    .line 161
+-    const-string v5, "NetworkStatsOnPortHandler"
+-
+-    new-instance v6, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    const-string v7, "getNetworkStatsVideoCall networkStatsRtcp : "
+-
+-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v4}, Landroid/net/NetworkStats;->getTotalBytes()J
+-
+-    move-result-wide v7
+-
+-    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+-
+-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v6
+-
+-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 162
+-    invoke-virtual {v4}, Landroid/net/NetworkStats;->getTotalBytes()J
+-
+-    move-result-wide v5
+-    :try_end_1
+-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+-
+-    add-long/2addr v1, v5
+-
+-    goto :goto_0
+-
+-    .line 165
+-    .end local v3    # "networkStatsRtp":Landroid/net/NetworkStats;
+-    .end local v4    # "networkStatsRtcp":Landroid/net/NetworkStats;
+-    :catch_0
+-    move-exception v3
+-
+-    .line 166
+-    .local v3, "e":Landroid/os/RemoteException;
+-    :try_start_2
+-    invoke-virtual {v3}, Landroid/os/RemoteException;->printStackTrace()V
+-    :try_end_2
+-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+-
+-    goto :goto_1
+-
+-    .line 167
+-    .end local v3    # "e":Landroid/os/RemoteException;
+-    :cond_1
+-    :goto_0
+-    nop
+-
+-    .line 168
+-    :goto_1
+-    monitor-exit p0
+-
+-    return-wide v1
+-
+-    .line 147
+-    .end local v0    # "sNwMgrService":Landroid/os/INetworkManagementService;
+-    .end local v1    # "dataUsage":J
+-    :catchall_0
+-    move-exception v0
+-
+-    monitor-exit p0
+-
+-    throw v0
++    return-wide v0
+ .end method
+ 
+ .method public handleMessage(Landroid/os/Message;)V
+diff -urN ./smali/com/sec/internal/ims/servicemodules/volte2/TmoEcholocateIntentBroadcaster.smali ./smali2/com/sec/internal/ims/servicemodules/volte2/TmoEcholocateIntentBroadcaster.smali
+--- ./smali/com/sec/internal/ims/servicemodules/volte2/TmoEcholocateIntentBroadcaster.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/volte2/TmoEcholocateIntentBroadcaster.smali	2024-04-18 06:31:06.698356880 +0900
+@@ -384,7 +384,7 @@
+ 
+     const-string v4, "0"
+ 
+-    invoke-static {v3, v4}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -696,7 +696,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -801,7 +801,7 @@
+ 
+     move-result-object v3
+ 
+-    invoke-static {v3, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v3, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v1
+ 
+@@ -963,7 +963,7 @@
+ 
+     move-result-object v1
+ 
+-    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -1875,7 +1875,7 @@
+     :try_start_0
+     const-string/jumbo v1, "ro.csc.sales_code"
+ 
+-    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/servicemodules/volte2/VolteServiceModuleInternal.smali ./smali2/com/sec/internal/ims/servicemodules/volte2/VolteServiceModuleInternal.smali
+--- ./smali/com/sec/internal/ims/servicemodules/volte2/VolteServiceModuleInternal.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/servicemodules/volte2/VolteServiceModuleInternal.smali	2024-04-18 06:31:06.698356880 +0900
+@@ -2800,7 +2800,7 @@
+     .line 834
+     .local v5, "ecclistOnNet":Ljava/lang/String;
+     :goto_0
+-    invoke-static {v5, v4}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v5, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v6
+ 
+@@ -2844,7 +2844,7 @@
+ 
+     .line 840
+     .local v9, "key":Ljava/lang/String;
+-    invoke-static {v9}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v10
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/DeviceConfigManager.smali ./smali2/com/sec/internal/ims/settings/DeviceConfigManager.smali
+--- ./smali/com/sec/internal/ims/settings/DeviceConfigManager.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/DeviceConfigManager.smali	2024-04-18 06:31:06.458356580 +0900
+@@ -188,7 +188,7 @@
+     .line 113
+     const-string/jumbo v3, "ro.csc.sales_code"
+ 
+-    invoke-static {v3, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -196,7 +196,7 @@
+     .local v1, "omc_code":Ljava/lang/String;
+     const-string/jumbo v3, "ro.csc.omcnw_code"
+ 
+-    invoke-static {v3, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v3
+ 
+@@ -4260,7 +4260,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -4623,7 +4623,7 @@
+     .line 477
+     const-string/jumbo v7, "persist.sys.ims_test_mode"
+ 
+-    invoke-static {v7, v5}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v7, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 479
+     iget-object v5, p0, Lcom/sec/internal/ims/settings/DeviceConfigManager;->mMno:Lcom/sec/internal/constants/Mno;
+@@ -5444,7 +5444,7 @@
+     :goto_0
+     const-string v2, "net.tether.always"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     goto :goto_1
+ 
+@@ -6307,7 +6307,7 @@
+     :cond_d
+     const-string/jumbo v6, "persist.sys.ims_test_mode"
+ 
+-    invoke-static {v6, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v6, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v3
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/GlobalSettingsRepo.smali ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepo.smali
+--- ./smali/com/sec/internal/ims/settings/GlobalSettingsRepo.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepo.smali	2024-04-18 06:31:06.402356511 +0900
+@@ -425,7 +425,7 @@
+ 
+     const-string v3, ""
+ 
+-    invoke-static {v1, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/GlobalSettingsRepoBase.smali ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepoBase.smali
+--- ./smali/com/sec/internal/ims/settings/GlobalSettingsRepoBase.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepoBase.smali	2024-04-18 06:31:06.398356506 +0900
+@@ -1107,7 +1107,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -1115,7 +1115,7 @@
+     .local v0, "pdaVer":Ljava/lang/String;
+     const-string/jumbo v2, "ril.official_cscver"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -4027,7 +4027,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -4035,7 +4035,7 @@
+     .local v0, "pdaVer":Ljava/lang/String;
+     const-string/jumbo v2, "ril.official_cscver"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/GlobalSettingsRepoKorChnx.smali ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepoKorChnx.smali
+--- ./smali/com/sec/internal/ims/settings/GlobalSettingsRepoKorChnx.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/GlobalSettingsRepoKorChnx.smali	2024-04-18 06:31:06.394356501 +0900
+@@ -46,7 +46,7 @@
+ 
+     const-string v3, "0,0"
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -301,7 +301,7 @@
+ 
+     const-string/jumbo v2, "ro.product.first_api_level"
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v2
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsAutoUpdate.smali ./smali2/com/sec/internal/ims/settings/ImsAutoUpdate.smali
+--- ./smali/com/sec/internal/ims/settings/ImsAutoUpdate.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsAutoUpdate.smali	2024-04-18 06:31:06.266356342 +0900
+@@ -4320,7 +4320,7 @@
+ 
+     const/4 v4, -0x1
+ 
+-    invoke-static {v3, v4}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v3
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsProfileCache.smali ./smali2/com/sec/internal/ims/settings/ImsProfileCache.smali
+--- ./smali/com/sec/internal/ims/settings/ImsProfileCache.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsProfileCache.smali	2024-04-18 06:31:06.398356506 +0900
+@@ -724,7 +724,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -732,7 +732,7 @@
+     .local v0, "pdaVer":Ljava/lang/String;
+     const-string/jumbo v2, "ril.official_cscver"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -864,7 +864,7 @@
+ 
+     const-string v1, ""
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -872,7 +872,7 @@
+     .local v0, "pdaVer":Ljava/lang/String;
+     const-string/jumbo v2, "ril.official_cscver"
+ 
+-    invoke-static {v2, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsProfileLoaderInternal.smali ./smali2/com/sec/internal/ims/settings/ImsProfileLoaderInternal.smali
+--- ./smali/com/sec/internal/ims/settings/ImsProfileLoaderInternal.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsProfileLoaderInternal.smali	2024-04-18 06:31:06.398356506 +0900
+@@ -187,7 +187,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsServiceSwitchBase.smali ./smali2/com/sec/internal/ims/settings/ImsServiceSwitchBase.smali
+--- ./smali/com/sec/internal/ims/settings/ImsServiceSwitchBase.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsServiceSwitchBase.smali	2024-04-18 06:31:06.398356506 +0900
+@@ -1593,7 +1593,7 @@
+ 
+     const-string v6, ""
+ 
+-    invoke-static {v5, v6}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v5, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v5
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsServiceSwitchEur.smali ./smali2/com/sec/internal/ims/settings/ImsServiceSwitchEur.smali
+--- ./smali/com/sec/internal/ims/settings/ImsServiceSwitchEur.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsServiceSwitchEur.smali	2024-04-18 06:31:06.462356585 +0900
+@@ -2303,7 +2303,7 @@
+     .line 513
+     const-string/jumbo v7, "ro.product.first_api_level"
+ 
+-    invoke-static {v7, v6}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v7, v6}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v6
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/ImsSimMobilityUpdate.smali ./smali2/com/sec/internal/ims/settings/ImsSimMobilityUpdate.smali
+--- ./smali/com/sec/internal/ims/settings/ImsSimMobilityUpdate.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/ImsSimMobilityUpdate.smali	2024-04-18 06:31:06.398356506 +0900
+@@ -1199,7 +1199,7 @@
+ 
+     const-string/jumbo v6, "persist.ims.simmobility"
+ 
+-    invoke-static {v6, v4}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v6, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v4
+ 
+@@ -1394,7 +1394,7 @@
+ 
+     const-string/jumbo v2, "ro.product.first_api_level"
+ 
+-    invoke-static {v2, v3}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v2
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/SettingsProvider$1.smali ./smali2/com/sec/internal/ims/settings/SettingsProvider$1.smali
+--- ./smali/com/sec/internal/ims/settings/SettingsProvider$1.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/SettingsProvider$1.smali	2024-04-18 06:31:06.362356461 +0900
+@@ -43,7 +43,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+ 
+     move-result v0
+ 
+diff -urN ./smali/com/sec/internal/ims/settings/SettingsProvider.smali ./smali2/com/sec/internal/ims/settings/SettingsProvider.smali
+--- ./smali/com/sec/internal/ims/settings/SettingsProvider.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/settings/SettingsProvider.smali	2024-04-18 06:31:06.266356342 +0900
+@@ -1330,7 +1330,7 @@
+ 
+     const-string v6, ""
+ 
+-    invoke-static {v2, v6}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+diff -urN ./smali/com/sec/internal/ims/util/ConfigUtil.smali ./smali2/com/sec/internal/ims/util/ConfigUtil.smali
+--- ./smali/com/sec/internal/ims/util/ConfigUtil.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/util/ConfigUtil.smali	2024-02-28 23:31:19.917745000 +0900
+@@ -289,199 +289,14 @@
+ .end method
+ 
+ .method public static checkMdmRcsStatus(Landroid/content/Context;I)Z
+-    .locals 11
++    .locals 1
+     .param p0, "context"    # Landroid/content/Context;
+     .param p1, "phoneId"    # I
+ 
+     .line 308
+-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
++    const/4 v0, 0x1
+ 
+-    move-result-object v0
+-
+-    .line 309
+-    .local v0, "simSlot":Ljava/lang/String;
+-    const-string v1, "content://com.sec.knox.provider2/PhoneRestrictionPolicy"
+-
+-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+-
+-    move-result-object v1
+-
+-    .line 310
+-    .local v1, "uri":Landroid/net/Uri;
+-    const/4 v2, 0x3
+-
+-    new-array v6, v2, [Ljava/lang/String;
+-
+-    const/4 v2, 0x0
+-
+-    const-string v3, "1"
+-
+-    aput-object v3, v6, v2
+-
+-    const/4 v2, 0x1
+-
+-    const-string v8, "false"
+-
+-    aput-object v8, v6, v2
+-
+-    const/4 v2, 0x2
+-
+-    aput-object v0, v6, v2
+-
+-    .line 311
+-    .local v6, "selectionArgs":[Ljava/lang/String;
+-    const-string v9, "isRCSEnabled"
+-
+-    .line 312
+-    .local v9, "projectionArgs":Ljava/lang/String;
+-    const/4 v10, 0x1
+-
+-    .line 313
+-    .local v10, "isAllowed":Z
+-    if-nez p0, :cond_0
+-
+-    .line 314
+-    return v10
+-
+-    .line 317
+-    :cond_0
+-    :try_start_0
+-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+-
+-    move-result-object v2
+-
+-    const/4 v4, 0x0
+-
+-    const/4 v7, 0x0
+-
+-    move-object v3, v1
+-
+-    move-object v5, v9
+-
+-    invoke-virtual/range {v2 .. v7}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+-
+-    move-result-object v2
+-    :try_end_0
+-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    .line 318
+-    .local v2, "cr":Landroid/database/Cursor;
+-    if-eqz v2, :cond_2
+-
+-    :try_start_1
+-    invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
+-
+-    move-result v3
+-
+-    if-eqz v3, :cond_2
+-
+-    .line 319
+-    invoke-interface {v2, v9}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+-
+-    move-result v3
+-
+-    invoke-interface {v2, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+-
+-    move-result-object v3
+-
+-    .line 320
+-    .local v3, "result":Ljava/lang/String;
+-    if-eqz v3, :cond_2
+-
+-    invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+-
+-    move-result v4
+-
+-    if-eqz v4, :cond_2
+-
+-    .line 321
+-    sget-object v4, Lcom/sec/internal/ims/util/ConfigUtil;->LOG_TAG:Ljava/lang/String;
+-
+-    const-string v5, "checkMdmRcsStatus: Disabled RCS"
+-
+-    invoke-static {v4, p1, v5}, Lcom/sec/internal/log/IMSLog;->d(Ljava/lang/String;ILjava/lang/String;)V
+-    :try_end_1
+-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+-
+-    .line 322
+-    const/4 v4, 0x0
+-
+-    move v10, v4
+-
+-    .end local v10    # "isAllowed":Z
+-    .local v4, "isAllowed":Z
+-    goto :goto_1
+-
+-    .line 317
+-    .end local v3    # "result":Ljava/lang/String;
+-    .end local v4    # "isAllowed":Z
+-    .restart local v10    # "isAllowed":Z
+-    :catchall_0
+-    move-exception v3
+-
+-    if-eqz v2, :cond_1
+-
+-    :try_start_2
+-    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+-    :try_end_2
+-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+-
+-    goto :goto_0
+-
+-    :catchall_1
+-    move-exception v4
+-
+-    :try_start_3
+-    invoke-virtual {v3, v4}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+-
+-    .end local v0    # "simSlot":Ljava/lang/String;
+-    .end local v1    # "uri":Landroid/net/Uri;
+-    .end local v6    # "selectionArgs":[Ljava/lang/String;
+-    .end local v9    # "projectionArgs":Ljava/lang/String;
+-    .end local v10    # "isAllowed":Z
+-    .end local p0    # "context":Landroid/content/Context;
+-    .end local p1    # "phoneId":I
+-    :cond_1
+-    :goto_0
+-    throw v3
+-
+-    .line 325
+-    .restart local v0    # "simSlot":Ljava/lang/String;
+-    .restart local v1    # "uri":Landroid/net/Uri;
+-    .restart local v6    # "selectionArgs":[Ljava/lang/String;
+-    .restart local v9    # "projectionArgs":Ljava/lang/String;
+-    .restart local v10    # "isAllowed":Z
+-    .restart local p0    # "context":Landroid/content/Context;
+-    .restart local p1    # "phoneId":I
+-    :cond_2
+-    :goto_1
+-    if-eqz v2, :cond_3
+-
+-    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+-    :try_end_3
+-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_0
+-
+-    .line 327
+-    .end local v2    # "cr":Landroid/database/Cursor;
+-    :cond_3
+-    goto :goto_2
+-
+-    .line 325
+-    :catch_0
+-    move-exception v2
+-
+-    .line 326
+-    .local v2, "e":Ljava/lang/IllegalArgumentException;
+-    sget-object v3, Lcom/sec/internal/ims/util/ConfigUtil;->LOG_TAG:Ljava/lang/String;
+-
+-    const-string v4, "checkMdmRcsStatus: isAllowed = true due to IllegalArgumentException"
+-
+-    invoke-static {v3, p1, v4}, Lcom/sec/internal/log/IMSLog;->e(Ljava/lang/String;ILjava/lang/String;)V
+-
+-    .line 328
+-    .end local v2    # "e":Ljava/lang/IllegalArgumentException;
+-    :goto_2
+-    return v10
++    return v0
+ .end method
+ 
+ .method public static decryptParam(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+diff -urN ./smali/com/sec/internal/ims/util/CscParser.smali ./smali2/com/sec/internal/ims/util/CscParser.smali
+--- ./smali/com/sec/internal/ims/util/CscParser.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/util/CscParser.smali	2024-04-18 06:31:06.866357089 +0900
+@@ -214,7 +214,7 @@
+     .line 70
+     const-string/jumbo v0, "persist.sys.omc_path"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -238,7 +238,7 @@
+ 
+     const-string/jumbo v2, "persist.radio.multisim.config"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -258,7 +258,7 @@
+     .line 75
+     const-string/jumbo v2, "persist.sys.omcnw_path2"
+ 
+-    invoke-static {v2, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -266,7 +266,7 @@
+ 
+     .line 77
+     :cond_0
+-    invoke-static {v3, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -274,7 +274,7 @@
+ 
+     .line 80
+     :cond_1
+-    invoke-static {v3, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -954,7 +954,7 @@
+ 
+     const-string v2, "/odm/omc"
+ 
+-    invoke-static {v1, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3144,7 +3144,7 @@
+     :cond_0
+     const-string/jumbo v0, "persist.sys.omc_path"
+ 
+-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -3170,7 +3170,7 @@
+ 
+     const-string/jumbo v2, "persist.radio.multisim.config"
+ 
+-    invoke-static {v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v2
+ 
+@@ -3188,7 +3188,7 @@
+     .line 224
+     const-string/jumbo v2, "persist.sys.omcnw_path2"
+ 
+-    invoke-static {v2, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v2, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3196,7 +3196,7 @@
+ 
+     .line 226
+     :cond_1
+-    invoke-static {v3, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+@@ -3204,7 +3204,7 @@
+ 
+     .line 229
+     :cond_2
+-    invoke-static {v3, v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v3, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/ims/util/ImsUtil.smali ./smali2/com/sec/internal/ims/util/ImsUtil.smali
+--- ./smali/com/sec/internal/ims/util/ImsUtil.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/ims/util/ImsUtil.smali	2024-04-18 06:31:06.878357104 +0900
+@@ -251,7 +251,7 @@
+ 
+     .line 396
+     .local v0, "propVal":Ljava/lang/String;
+-    invoke-static {p0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {p0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v1
+ 
+diff -urN ./smali/com/sec/internal/interfaces/ims/config/IHttpAdapter.smali ./smali2/com/sec/internal/interfaces/ims/config/IHttpAdapter.smali
+--- ./smali/com/sec/internal/interfaces/ims/config/IHttpAdapter.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/interfaces/ims/config/IHttpAdapter.smali	2024-04-18 06:31:06.258356332 +0900
+@@ -24,7 +24,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/interfaces/ims/core/imslogger/ISignallingNotifier.smali ./smali2/com/sec/internal/interfaces/ims/core/imslogger/ISignallingNotifier.smali
+--- ./smali/com/sec/internal/interfaces/ims/core/imslogger/ISignallingNotifier.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/interfaces/ims/core/imslogger/ISignallingNotifier.smali	2024-04-18 06:31:06.254356327 +0900
+@@ -32,7 +32,7 @@
+ 
+     const-string/jumbo v1, "user"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -49,7 +49,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -67,7 +67,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/log/AECLog.smali ./smali2/com/sec/internal/log/AECLog.smali
+--- ./smali/com/sec/internal/log/AECLog.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/log/AECLog.smali	2024-04-18 06:31:05.938355933 +0900
+@@ -34,7 +34,7 @@
+ 
+     const-string v1, "0x4f4c"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -48,7 +48,7 @@
+ 
+     const-string v1, "false"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+diff -urN ./smali/com/sec/internal/log/IMSLog.smali ./smali2/com/sec/internal/log/IMSLog.smali
+--- ./smali/com/sec/internal/log/IMSLog.smali	2024-04-08 23:01:38.000000000 +0900
++++ ./smali2/com/sec/internal/log/IMSLog.smali	2024-04-18 06:31:05.938355933 +0900
+@@ -82,7 +82,7 @@
+ 
+     const-string/jumbo v1, "user"
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -99,7 +99,7 @@
+ 
+     const/4 v1, 0x0
+ 
+-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+ 
+     move-result v0
+ 
+@@ -134,7 +134,7 @@
+ 
+     const-string v2, "false"
+ 
+-    invoke-static {v0, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -151,7 +151,7 @@
+ 
+     const-string v2, ""
+ 
+-    invoke-static {v0, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
+@@ -167,7 +167,7 @@
+     .line 45
+     const-string/jumbo v0, "ro.csc.sales_code"
+ 
+-    invoke-static {v0, v2}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ 
+     move-result-object v0
+ 
