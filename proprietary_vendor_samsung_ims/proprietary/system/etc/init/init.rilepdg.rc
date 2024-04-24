@@ -1,0 +1,18 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on post-fs-data
+    mkdir /data/misc/eris 0770 system system
+
+service eris /system/bin/eris
+    class main
+    socket eris stream 660 system system
+    user system
+    group system inet
+    capabilities NET_ADMIN NET_BIND_SERVICE NET_RAW
+    oneshot
+    disabled
+
