@@ -26,71 +26,16 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ImsNotifier implements IImsNotifier {
     private static final String LOG_TAG = "ImsNotifier";
     private GoogleImsService mGoogleImsService;
-    private final Map<Integer, RemoteCallbackList<IImsRegistrationCallback>> mRegistrationCallbacks = new ConcurrentHashMap();
 
     public ImsNotifier(GoogleImsService googleImsService) {
         this.mGoogleImsService = googleImsService;
-    }
-
-    public void addCallback(int phoneId, IImsRegistrationCallback callback) {
-        ImsRegistration[] registrationList = ImsRegistry.getRegistrationManager().getRegistrationInfo();
-        if (!CollectionUtils.isNullOrEmpty(registrationList)) {
-            for (ImsRegistration reg : registrationList) {
-                if (reg.getPhoneId() == phoneId && reg.hasVolteService()) {
-                    try {
-                        callback.onRegistered(GoogleImsService.getRegistrationTech(reg.getCurrentRat()));
-                        if (this.mGoogleImsService.isOwnUrisChanged(phoneId, reg)) {
-                            callback.onSubscriberAssociatedUriChanged(this.mGoogleImsService.mOwnUris.get(Integer.valueOf(phoneId)));
-                        }
-                    } catch (RemoteException e) {
-                    }
-                }
-            }
-        }
-        if (!this.mRegistrationCallbacks.containsKey(Integer.valueOf(phoneId))) {
-            this.mRegistrationCallbacks.put(Integer.valueOf(phoneId), new RemoteCallbackList<>());
-        }
-        this.mRegistrationCallbacks.get(Integer.valueOf(phoneId)).register(callback);
-    }
-
-    public void removeCallback(int phoneId, IImsRegistrationCallback callback) {
-        if (this.mRegistrationCallbacks.containsKey(Integer.valueOf(phoneId))) {
-            this.mRegistrationCallbacks.get(Integer.valueOf(phoneId)).unregister(callback);
-        }
     }
 
     @Override
     public void notifyImsRegistration(ImsRegistration reg, boolean registered, ImsRegistrationError error) {
         Log.i(LOG_TAG, "notifyImsRegistration");
         boolean isUriChanged = this.mGoogleImsService.isOwnUrisChanged(reg.getPhoneId(), reg);
-        notifyRegistrationCallback(reg, registered, error, isUriChanged);
         notifyRegistrationListener(reg, registered, error, isUriChanged);
-    }
-
-    private void notifyRegistrationCallback(ImsRegistration reg, boolean registered, ImsRegistrationError error, boolean uriChanged) {
-        RemoteCallbackList<IImsRegistrationCallback> registrationCallback = this.mRegistrationCallbacks.get(Integer.valueOf(reg.getPhoneId()));
-        if (registrationCallback != null) {
-            int callbackSize = registrationCallback.beginBroadcast();
-            for (int i = 0; i < callbackSize; i++) {
-                try {
-                    IImsRegistrationCallback callback = registrationCallback.getBroadcastItem(i);
-                    if (callback != null) {
-                        if (registered) {
-                            callback.onRegistered(GoogleImsService.getRegistrationTech(reg.getCurrentRat()));
-                            if (uriChanged) {
-                                callback.onSubscriberAssociatedUriChanged(this.mGoogleImsService.mOwnUris.get(Integer.valueOf(reg.getPhoneId())));
-                            }
-                        } else {
-                            ImsReasonInfo reasonInfo = new ImsReasonInfo(error.getSipErrorCode(), error.getDeregistrationReason(), error.getSipErrorReason());
-                            callback.onDeregistered(reasonInfo);
-                            callback.onSubscriberAssociatedUriChanged(new Uri[0]);
-                        }
-                    }
-                } catch (RemoteException e) {
-                }
-            }
-            registrationCallback.finishBroadcast();
-        }
     }
 
     private void notifyRegistrationListener(ImsRegistration reg, boolean registered, ImsRegistrationError error, boolean uriChanged) {
@@ -98,7 +43,7 @@ public class ImsNotifier implements IImsNotifier {
         for (Integer key : GoogleImsService.mServiceList.keySet()) {
             ServiceProfile service = GoogleImsService.mServiceList.get(key);
             if (phoneId == service.getPhoneId()) {
-                Log.i("notifying Listener with status " + (registered ? 1 : 0), LOG_TAG);
+                Log.i(LOG_TAG, "notifying Listener with status " + (registered ? 1 : 0));
                 if (registered) {
                     int registrationTech = GoogleImsService.getRegistrationTech(reg.getCurrentRat());
                     if (!uriChanged) {

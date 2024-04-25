@@ -12,8 +12,6 @@ import android.telephony.ims.ImsCallProfile;
 import android.telephony.ims.ImsConferenceState;
 import android.telephony.ims.ImsReasonInfo;
 import android.telephony.ims.ImsStreamMediaProfile;
-import android.telephony.ims.aidl.IImsRegistration;
-import android.telephony.ims.aidl.IImsRegistrationCallback;
 import android.telephony.ims.aidl.IImsSmsListener;
 import android.telephony.ims.feature.ImsFeature;
 import android.telephony.ims.stub.ImsEcbmImplBase;
@@ -79,7 +77,6 @@ public class GoogleImsService implements IGoogleImsService {
     Map<Integer, ImsUtImplBase> mUtList = new ConcurrentHashMap();
     Map<Integer, ImsEcbmImpl> mImsEcbmList = new ConcurrentHashMap();
     Map<Integer, IImsConfig> mConfigs = new ConcurrentHashMap();
-    Map<Integer, IImsRegistration> mRegistrations = new ConcurrentHashMap();
     Map<Integer, ImsCallSessionImpl> mCallSessionList = new ConcurrentHashMap();
     String mServiceUrn = "";
     Map<Integer, Uri[]> mOwnUris = new ConcurrentHashMap();
@@ -261,16 +258,6 @@ public class GoogleImsService implements IGoogleImsService {
             service.setRegistrationListener(listener);
             mServiceList.put(Integer.valueOf(serviceId), service);
         }
-    }
-
-    public IImsRegistration getRegistration(int phoneId) {
-        this.mContext.enforceCallingOrSelfPermission(IMS_CALL_PERMISSION, "getRegistration");
-        if (this.mRegistrations.containsKey(Integer.valueOf(phoneId))) {
-            return this.mRegistrations.get(Integer.valueOf(phoneId));
-        }
-        IImsRegistration regi = new ImsRegistrationImpl(phoneId);
-        this.mRegistrations.put(Integer.valueOf(phoneId), regi);
-        return regi;
     }
 
     public void addRegistrationListener(int phoneId, int serviceClass, IImsRegistrationListener listener) {
@@ -1028,42 +1015,5 @@ public class GoogleImsService implements IGoogleImsService {
             }
         }
         return callExtras;
-    }
-
-    private class ImsRegistrationImpl extends IImsRegistration.Stub {
-        private int mPhoneId;
-
-        public ImsRegistrationImpl(int phoneId) {
-            this.mPhoneId = 0;
-            this.mPhoneId = phoneId;
-        }
-
-        public int getRegistrationTechnology() {
-            ImsRegistration[] registrationList = ImsRegistry.getRegistrationManager().getRegistrationInfo();
-            int regiTech = -1;
-            if (!CollectionUtils.isNullOrEmpty(registrationList)) {
-                for (ImsRegistration regi : registrationList) {
-                    if (regi.getPhoneId() == this.mPhoneId && regi.hasVolteService()) {
-                        Mno mno = Mno.fromName(regi.getImsProfile().getMnoName());
-                        if (!regi.getImsProfile().hasEmergencySupport()) {
-                            if (mno.isKor() && regi.getRegiRat() != 18) {
-                                regiTech = 0;
-                            } else {
-                                regiTech = GoogleImsService.getRegistrationTech(regi.getCurrentRat());
-                            }
-                        }
-                    }
-                }
-            }
-            return regiTech;
-        }
-
-        public void addRegistrationCallback(IImsRegistrationCallback callback) {
-            GoogleImsService.this.mImsNotifier.addCallback(this.mPhoneId, callback);
-        }
-
-        public void removeRegistrationCallback(IImsRegistrationCallback callback) {
-            GoogleImsService.this.mImsNotifier.removeCallback(this.mPhoneId, callback);
-        }
     }
 }
