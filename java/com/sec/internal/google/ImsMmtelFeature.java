@@ -308,8 +308,7 @@ public class ImsMmtelFeature extends android.telephony.ims.compat.feature.MMTelF
      * @return MultiEndpoint interface for DEP notifications
      */
     public ImsMultiEndpointImplBase getMultiEndpointInterface() {
-        /* TBD: Need to rework ImsMultiEndpointImpl */
-        return null;
+        return mMainSvc.getMultiEndpointInterface(mServiceId);
     }
 
     /**

@@ -15,13 +15,13 @@ import android.telephony.ims.ImsStreamMediaProfile;
 import android.telephony.ims.aidl.IImsSmsListener;
 import android.telephony.ims.feature.ImsFeature;
 import android.telephony.ims.stub.ImsEcbmImplBase;
+import android.telephony.ims.stub.ImsMultiEndpointImplBase;
 import android.telephony.ims.stub.ImsUtImplBase;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.ims.internal.IImsCallSession;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.android.ims.internal.IImsConfig;
-import com.android.ims.internal.IImsMultiEndpoint;
 import com.android.ims.internal.IImsRegistrationListener;
 import com.android.internal.telephony.PublishDialog;
 import com.samsung.android.cmcnsd.CmcNsdManager;
@@ -523,7 +523,7 @@ public class GoogleImsService implements IGoogleImsService {
         iVolteServiceModule.setTtyMode(phoneId, mode);
     }
 
-    public IImsMultiEndpoint getMultiEndpointInterface(int serviceId) {
+    public ImsMultiEndpointImplBase getMultiEndpointInterface(int serviceId) {
         this.mContext.enforceCallingOrSelfPermission(IMS_CALL_PERMISSION, "getMultiEndpointInterface");
         ServiceProfile service = mServiceList.get(Integer.valueOf(serviceId));
         if (service == null) {

@@ -125,14 +125,11 @@ public class ImsNotifier implements IImsNotifier {
 
     @Override
     public void onDialogEvent(DialogEvent de) {
-        if (GoogleImsService.mMultEndPoints.get(Integer.valueOf(de.getPhoneId())) != null) {
+        ImsMultiEndPointImpl currMultEndpt = GoogleImsService.mMultEndPoints.get(Integer.valueOf(de.getPhoneId()));
+        if (currMultEndpt != null) {
             int deCmcType = this.mGoogleImsService.getCmcTypeFromRegHandle(de.getRegId());
-            GoogleImsService.mMultEndPoints.get(Integer.valueOf(de.getPhoneId())).setDialogInfo(de, deCmcType);
-            try {
-                IImsExternalCallStateListener listener = GoogleImsService.mMultEndPoints.get(Integer.valueOf(de.getPhoneId())).getImsExternalCallStateListener();
-                listener.onImsExternalCallStateUpdate(GoogleImsService.mMultEndPoints.get(Integer.valueOf(de.getPhoneId())).getExternalCallStateList());
-            } catch (RemoteException e) {
-            }
+            currMultEndpt.setDialogInfo(de, deCmcType);
+            currMultEndpt.requestImsExternalCallStateInfo();
         }
     }
 
